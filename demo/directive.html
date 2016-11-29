@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义指令与钩子</title>
+</head>
+<body>
+	<script type="text/javascript" src='../lib/vue.js'></script>
+	<div id="vm" v-demo:hello.a.b="msg"></div>
+	<script type="text/javascript">
+		Vue.directive('demo',{
+			bind:function(){
+				console.log('demo bound');
+			},
+			update:function(value){
+				this.el.innerHTML = 'name-'+this.name+'<br>'
+			}
+		});
+		var demo = new Vue({
+			el:'#vm',
+			data:{
+				msg:'hello!'
+			},
+			methods:{
+				up:function(){
+					console.info('click');
+				}
+			}
+		}) 
+	</script>
+</body>
+</html>
