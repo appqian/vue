@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染</title>
+</head>
+<body id="vm">
+	<script type="text/javascript" src='../lib/vue.js'></script>
+	<ul id='demo'>
+		<li v-for='item in items' class="item-{{$index}}">{{$index}}-{{parentMessage}} {{item.msg}}</li>
+	</ul>
+	<script type="text/javascript">
+		var demo = new Vue({
+			el:'#demo',
+			data:{
+				parentMessage:'滴滴',
+				items:[
+					{msg:'顺风车'},
+					{msg:'专车'}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

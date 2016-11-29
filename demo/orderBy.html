@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据field变量代表的tag字段正序排列</title>
+</head>
+<body id = "vm">
+	<script type="text/javascript" src='../lib/vue.js'></script>
+	<ul>
+		<li v-for='user in users | orderBy field reverse'>{{user.name}}</li>
+	</ul>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#vm',
+			data:{
+				field:'tag',
+				reverse:false,
+				users:[
+					{
+						name:'快车',
+						tag:'4'
+					},
+					{
+						name:'出租车',
+						tag:'6'
+					},
+					{
+						name:'顺风车',
+						tag:'3'
+					},
+					{
+						name:'转车',
+						tag:'5'
+					}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据输入框的值过滤信息</title>
+</head>
+<body id = "vm">
+	<script type="text/javascript" src='../lib/vue.js'></script>
+	<input v-model="searchText"/>
+	<ul>
+		<li v-for='user in users | filterBy searchText in "name"'>{{user.name}}</li>
+	</ul>
+	<ul>
+		<li v-for='user in users | orderBy field in "name"'>{{user.name}}</li>
+	</ul>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#vm',
+			data:{
+				users:[
+					{
+						name:'快车',
+						tag:'1'
+					},
+					{
+						name:'出租车',
+						tag:'2'
+					},
+					{
+						name:'顺风车',
+						tag:'3'
+					},
+					{
+						name:'转车',
+						tag:'4'
+					}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据的双向绑定</title>
+</head>
+<body id="vm">
+	<form>
+		姓名:<input placeholder="" type="text" v-model='data.name' />
+		性别:<input placeholder="" type="radio" id='man' value="one" v-model="data.sex" />
+		<label for='man'>男</label>
+		<input placeholder="" type="radio" id='male' value="two" v-model="data.sex" />
+		<label for="male">女</label>
+		兴趣:
+		<input type='checkbox' id="book" value="book" v-model='data.interest' />
+		<label for="book">阅读</label>
+		<input type='checkbox' id="swim" value="swim" v-model='data.interest' />
+		<label for="swim">游泳</label>
+		<input type='checkbox' id="game" value="game" v-model='data.interest' />
+		<label for="game">游戏</label>
+		<input type='checkbox' id="song" value="song" v-model='data.interest' />
+		<label for="song">唱歌</label>
+		身份:
+		<select v-model="data.indentity">
+			<option value="teacher" selected>教师</option>
+			<option value="doctor" >医生</option>
+			<option value="lawyer" >律师</option>
+		</select>
+	</form>
+	<script type="text/javascript" src='../lib/vue.js'></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#vm',
+			data:{
+				data:{
+					name:'zhangsan',
+					sex:'two',
+					interest:[],
+					indentity:'doctor'
+				}
+			}
+		})
+	</script>
+</body>
+</html>
