@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用v-for遍历数组、对象，田家属性以及属性值</title>
+</head>
+<body id='vm'>
+    <ul id="repeat-object">
+        <li v-for="value in primit">{{$key}}:{{value}}</li>
+        <li>===</li>
+        <li v-for="(key,item) in object">{{key}}:{{item.msg}}</li>
+    </ul>
+    <script type="text/javascript" src='../lib/vue.js'></script>
+    <script>
+        var demo = new Vue({
+            el:"#vm",
+            data:{
+                primit:{
+                    first:'didi',
+                    second:'fe',
+                    age:4
+                },
+                object:{
+                    one:{
+                        msg:'hello'
+                    },
+                    two:{
+                        msg:'world'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

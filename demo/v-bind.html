@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind指令用于响应HTML特性</title>
+</head>
+<body id="vm">
+    <!--绑定属性-->
+    <img v-bind:src="imgsrc" alt="">
+    <div v-bind:class="[classA, { classB: isB, classC: isC }]"></div>
+</body>
+ <script type="text/javascript" src='../lib/vue.js'></script>
+<script>
+    var demo = new Vue({
+        el:'#vm',
+        data：{
+            classA:'a',
+            isB:true,
+            isC:false
+        }
+    });
+</script>
+</html>
